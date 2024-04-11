@@ -1,3 +1,4 @@
+import { useState } from "react";
 import  germanyImg from "../../../../assets/flags/germany.jpg";
 import italyImg from "../../../../assets/flags/italy.jpg";
 import russiaImg from "../../../../assets/flags/russia.jpg";
@@ -24,7 +25,12 @@ const languages = [
 ];
 
 const LanguageDropdown = () => {
-  
+  const[language, setLanguage] = useState(false);
+
+  const languageHandeller = () =>{
+    setLanguage(!language)
+  }
+
   return (
     <div className="hs-dropdown relative inline-flex [--placement:bottom-right]">
       <button
@@ -32,9 +38,12 @@ const LanguageDropdown = () => {
         type="button"
         className="hs-dropdown-toggle inline-flex h-10 w-10 flex-shrink-0 items-center justify-center gap-2 rounded-full bg-default-100 align-middle text-xs font-medium text-default-700 transition-all hover:text-primary"
       >
-        <LuGlobe size={24} />
+        <LuGlobe size={24} onClick={languageHandeller} />
       </button>
-      <div className="hs-dropdown-menu duration mt-2 hidden min-w-[12rem] rounded-lg border border-default-200 bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 dark:bg-default-50">
+
+      {
+        language ? (
+<div className="hs-dropdown-menu duration mt-2 hidden min-w-[12rem] rounded-lg border border-default-200 bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] hs-dropdown-open:opacity-100 dark:bg-default-50">
         {languages.map((language) => (
           <button
             key={language.name}
@@ -51,6 +60,11 @@ const LanguageDropdown = () => {
           </button>
         ))}
       </div>
+        ):(
+          <></>
+        )
+      }
+      
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { LuChevronUp, LuMoon, LuSun } from "react-icons/lu";
 import { cn } from "../utils/cn-merge";
-import { useScrollEvent } from "../../hooks/useScrollEvent";
-import { useLayoutContext } from "@/context";
+import  useScrollEvent  from "../../hooks/useScrollEvent";
+import { useLayoutContext } from "../../context/useLayoutContext";
 
 const BackToTop = () => {
   const { scrollY } = useScrollEvent();

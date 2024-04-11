@@ -4,7 +4,8 @@ import TopbarAdmin from '../../components/layout/admin/TopbarAdmin/index';
 import Footer from '../../components/layout/Footer';
 import MenuAdmin from '../../components/layout/admin/Navbar';
 
-// import BackToTop from '../../components/layout/BackToTop'
+import BackToTop from '../../components/layout/BackToTop'
+import { LayoutProvider } from '../../context/useLayoutContext';
 
 
 
@@ -12,11 +13,14 @@ import MenuAdmin from '../../components/layout/admin/Navbar';
 const Dashboard = () => {
   return (
     <>
+<LayoutProvider>
+
     <TopbarAdmin/>
     <MenuAdmin />
       <Widget/>
       <Footer/>
-      {/* <BackToTop/> */}
+      <BackToTop/>
+      </LayoutProvider>
     </>
   )
 }
