@@ -21,5 +21,5 @@ export { default as OfferAdBanner } from "./OfferAdBanner";
 // export { default as ProductPagination } from "./ProductPagination";
 export { default as SimplebarReactClient } from "./SimplebarReactClient";
 // export { default as SpecialMenu } from "./SpecialMenu";
-export { default as StickyHeader } from "./StickyHeader";
+
 // export { default as SubscribeToMail } from "./SubscribeToMail";
